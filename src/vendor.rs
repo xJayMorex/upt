@@ -87,6 +87,7 @@ vendors![
         info: "upt info/show $",
         update_index: "upt update",
         upgrade_all: "upt upgrade",
+        autoremove: "upt autoremove",
         list_installed: "upt list",
     },
     {
@@ -99,6 +100,7 @@ vendors![
         info: "apk info $",
         update_index: "apk update",
         upgrade_all: "apk upgrade",
+        autoremove: "",
         list_installed: "apk list -I/--installed",
     },
     {
@@ -111,6 +113,7 @@ vendors![
         info: "apt show $",
         update_index: "apt update",
         upgrade_all: "apt upgrade",
+        autoremove: "apt autoremove",
         list_installed: "apt list -i/--installed",
     },
     {
@@ -123,6 +126,7 @@ vendors![
         info: "brew info $",
         update_index: "brew update",
         upgrade_all: "brew upgrade",
+        autoremove: "brew autoremove",
         list_installed: "brew list",
     },
     {
@@ -135,6 +139,7 @@ vendors![
         info: "cards info $",
         update_index: "cards sync",
         upgrade_all: "cards upgrade",
+        autoremove: "",
         list_installed: "cards list",
     },
     {
@@ -147,6 +152,7 @@ vendors![
         info: "choco info $",
         update_index: "",
         upgrade_all: "choco upgrade all",
+        autoremove: "",
         list_installed: "choco list",
     },
     {
@@ -159,6 +165,7 @@ vendors![
         info: "dnf info $",
         update_index: "dnf check-update",
         upgrade_all: "dnf update",
+        autoremove: "dnf autoremove",
         list_installed: "dnf list --installed",
     },
     {
@@ -171,6 +178,7 @@ vendors![
         info: "emerge --info $",
         update_index: "emerge --sync",
         upgrade_all: "emerge -vuDN @world",
+        autoremove: "emerge -c/--depclean",
         list_installed: "qlist -Iv",
     },
     {
@@ -183,6 +191,7 @@ vendors![
         info: "eopkg info $",
         update_index: "eopkg update-repo",
         upgrade_all: "eopkg upgrade",
+        autoremove: "eopkg remove-orphans",
         list_installed: "eopkg list-installed",
     },
     {
@@ -195,6 +204,7 @@ vendors![
         info: "flatpak info $",
         update_index: "",
         upgrade_all: "flatpak update",
+        autoremove: "flatpak uninstall --unused",
         list_installed: "flatpak list",
     },
     {
@@ -207,6 +217,7 @@ vendors![
         info: "guix show $",
         update_index: "guix refresh",
         upgrade_all: "guix upgrade",
+        autoremove: "",
         list_installed: "guix package -I/--list-installed",
     },
     {
@@ -219,6 +230,7 @@ vendors![
         info: "nala show $",
         update_index: "nala update",
         upgrade_all: "nala upgrade",
+        autoremove: "nala autoremove",
         list_installed: "nala list -i/--installed",
     },
     {
@@ -231,6 +243,7 @@ vendors![
         info: "nix-env -qa --description $",
         update_index: "nix-channel --update",
         upgrade_all: "nix-env -u/--upgrade",
+        autoremove: "nix-collect-garbage",
         list_installed: "nix-env -q/--query --installed",
     },
     {
@@ -243,6 +256,7 @@ vendors![
         info: "opkg info $",
         update_index: "opkg update",
         upgrade_all: "opkg upgrade",
+        autoremove: "",
         list_installed: "opkg list-installed",
     },
     {
@@ -255,6 +269,7 @@ vendors![
         info: "pacman -S -i $",
         update_index: "pacman -S -y",
         upgrade_all: "pacman -S -y -u",
+        autoremove: "pacman -Q -d -t -q | pacman -R -n -s -",
         list_installed: "pacman -Q",
     },
     {
@@ -267,6 +282,7 @@ vendors![
         info: "pkg info $",
         update_index: "pkg update",
         upgrade_all: "pkg upgrade",
+        autoremove: "pkg autoremove",
         list_installed: "pkg info -a/--all",
     },
     {
@@ -279,6 +295,7 @@ vendors![
         info: "pkg show $",
         update_index: "pkg update",
         upgrade_all: "pkg upgrade",
+        autoremove: "",
         list_installed: "pkg list-installed",
     },
     {
@@ -291,6 +308,7 @@ vendors![
         info: "",
         update_index: "pkgman refresh",
         upgrade_all: "pkgman update",
+        autoremove: "",
         list_installed: "pkgman search -i/--installed-only -a/--all",
     },
     {
@@ -303,6 +321,7 @@ vendors![
         info: "prt-get info $",
         update_index: "ports -u",
         upgrade_all: "prt-get sysup",
+        autoremove: "",
         list_installed: "prt-get listinst",
     },
     {
@@ -315,6 +334,7 @@ vendors![
         info: "scoop info $",
         update_index: "scoop update",
         upgrade_all: "scoop update *",
+        autoremove: "",
         list_installed: "scoop list",
     },
     {
@@ -327,6 +347,7 @@ vendors![
         info: "slackpkg info $",
         update_index: "slackpkg update",
         upgrade_all: "slackpkg upgrade-all",
+        autoremove: "",
         list_installed: "ls -1 /var/log/packages",
     },
     {
@@ -339,6 +360,7 @@ vendors![
         info: "snap info $",
         update_index: "",
         upgrade_all: "snap refresh",
+        autoremove: "",
         list_installed: "snap list",
     },
     {
@@ -351,6 +373,7 @@ vendors![
         info: "urpmq -i $",
         update_index: "urpmi.update -a",
         upgrade_all: "urpmi --auto-update",
+        autoremove: "remove-unused-packages",
         list_installed: "rpm -q/--query --all",
     },
     {
@@ -363,6 +386,7 @@ vendors![
         info: "winget show $",
         update_index: "",
         upgrade_all: "winget upgrade --all",
+        autoremove: "",
         list_installed: "winget list",
     },
     {
@@ -375,6 +399,7 @@ vendors![
         info: "xbps-query -RS $",
         update_index: "xbps-install -S/--sync",
         upgrade_all: "xbps-install -u/--update",
+        autoremove: "xbps-remove -o/--remove-orphans",
         list_installed: "xbps-query -l/--list-pkgs",
     },
     {
@@ -387,6 +412,7 @@ vendors![
         info: "yay -S -i $",
         update_index: "yay -S -y",
         upgrade_all: "yay -S -y -u",
+        autoremove: "yay -Y -c",
         list_installed: "yay -Q",
     },
     {
@@ -399,6 +425,7 @@ vendors![
         info: "yum info $",
         update_index: "yum check-update",
         upgrade_all: "yum update",
+        autoremove: "yum autoremove",
         list_installed: "yum list --installed",
     },
     {
@@ -411,6 +438,7 @@ vendors![
         info: "zypper info $",
         update_index: "zypper refresh",
         upgrade_all: "zypper update",
+        autoremove: "",
         list_installed: "zypper search -i/--installed-only",
     },
 ];
@@ -427,6 +455,7 @@ pub struct Vendor {
     pub(crate) info: Action,
     pub(crate) update_index: Action,
     pub(crate) upgrade_all: Action,
+    pub(crate) autoremove: Action,
     pub(crate) list_installed: Action,
 }
 
@@ -461,6 +490,9 @@ impl Vendor {
         if let Some((_, yes)) = self.upgrade_all.parse(args, &self.confirm) {
             return Ok(Task::UpgradeAll { confirm: yes });
         }
+        if let Some((_, yes)) = self.autoremove.parse(args, &self.confirm) {
+        	return Ok(Task::Autoremove { confirm: yes });
+        }
         if self.list_installed.parse(args, "").is_some() {
             return Ok(Task::ListInstalled);
         }
@@ -477,6 +509,7 @@ impl Vendor {
             Task::Info { pkg } => self.info.to_cmd(pkg, ""),
             Task::UpdateIndex => self.update_index.to_cmd("", ""),
             Task::UpgradeAll { confirm: yes } => self.upgrade_all.to_cmd("", self.yes_str(yes)),
+            Task::Autoremove { confirm: yes } => self.autoremove.to_cmd("", self.yes_str(yes)),
             Task::ListInstalled => self.list_installed.to_cmd("", ""),
         };
         cmd.ok_or(UptError::InvalidTask)
@@ -512,6 +545,7 @@ impl Vendor {
             (self.info.help(), "Show package details"),
             (self.update_index.help(), "Update package indexes"),
             (self.upgrade_all.help(), "Upgrade all packages"),
+            (self.autoremove.help(), "Remove unused packages"),
             (self.list_installed.help(), "List all installed packages"),
         ];
         let helps: Vec<(&String, &str)> = helps
@@ -586,6 +620,8 @@ mod tests {
         check_parse!(upt, ["upt", "update"], UpdateIndex);
         check_parse!(upt, ["upt", "upgrade"], (UpgradeAll, confirm = false));
         check_parse!(upt, ["upt", "upgrade", "-y"], (UpgradeAll, confirm = true));
+        check_parse!(upt, ["upt", "autoremove"], (Autoremove, confirm = false));
+        check_parse!(upt, ["upt", "autoremove", "-y"], (Autoremove, confirm = true));
         check_parse!(upt, ["upt", "list"], ListInstalled);
         check_parse!(upt, ["upt", "install"]);
         check_parse!(upt, ["upt", "install", "--ye"]);
@@ -648,6 +684,8 @@ mod tests {
         check_eval!(upt, UpdateIndex, "upt update");
         check_eval!(upt, (UpgradeAll, confirm = false), "upt upgrade");
         check_eval!(upt, (UpgradeAll, confirm = true), "upt upgrade -y");
+        check_eval!(upt, (Autoremove, confirm = false), "upt autoremove");
+        check_eval!(upt, (Autoremove, confirm = true), "upt autoremove -y");
         check_eval!(upt, ListInstalled, "upt list");
 
         let pacman = init_vendor("pacman").unwrap();
@@ -668,6 +706,8 @@ mod tests {
             (UpgradeAll, confirm = true),
             "pacman -S -y -u --noconfirm"
         );
+        check_eval!(pacman, (Autoremove, confirm = false), "pacman -Q -d -t -q | pacman -R -n -s -");
+        check_eval!(pacman, (Autoremove, confirm = true), "pacman -Q -d -t -q | pacman -R -n -s --noconfirm -");
         check_eval!(pacman, ListInstalled, "pacman -Q");
     }
 
